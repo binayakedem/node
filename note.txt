@@ -1,0 +1,7 @@
+1:module=small unit of functioning package
+math.js is one module
+
+2:file handling , how to use the file in node js
+
+file can be read , update , and so on file.js is file handling file, test is created using the 
+98/9/2024, 11:31:39 AM
