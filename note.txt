@@ -4,4 +4,53 @@ math.js is one module
 2:file handling , how to use the file in node js
 
 file can be read , update , and so on file.js is file handling file, test is created using the 
-98/9/2024, 11:31:39 AM
+98/9/2024, 11:31:39 AM8/9/2024, 11:35:41 AM
+
+
+3: architecture of node js
+
+
+client request=>server(node.js)[request is go to (event queue)=>then goes to event loop which continuousely checks the event queue to remove the request from event queue]
+there are two types of request=blocking operations(synchronous task=) and non-blocking operations(asynchronous=it is simplest)
+
+
+blocking operations(syncronous) goes to thread pool(blocking operations require thread i.e. worker which return the response)
+
+
+if you write blocking code then there should be wait if thread all are busy, then it should be wait till the free up the thread
+
+
+that's why you must focus on the non-blocking code 
+
+
+
+
+most important thing of blocking and non-blocking is that
+ blocking = it always blocks the resources so that code is execute serially
+ non-blocking= it does not blocks the resources so that any fast executable code will be executed and display  for instance
+
+
+ console.log("q")
+ fs.readFile("note.txt",(err,result)=>{
+    console.log(result);
+ })
+ console.log("3")
+
+
+ ==== result will be===
+ q
+ 3
+ and text content but if you use syncronous or blocking then result will be block to execute 3 so 
+ q 
+ text content
+ 3
+
+
+
+
+ most important is =default thread no. is=4 but you can increase the thread too as no. of cores in your pc
+
+
+ you can get the core length in myOs
+
+ 4: building of http server in node.js

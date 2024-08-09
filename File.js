@@ -31,3 +31,6 @@ if(err){
 // now appending the string into the existing data
 
 fs.appendFileSync("note.txt",new Date().toLocaleString());
+
+
+console.log(fs.statSync("./note.txt"))
